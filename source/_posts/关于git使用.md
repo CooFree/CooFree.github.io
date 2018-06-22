@@ -13,6 +13,9 @@ https://blog.csdn.net/Zhangxiaorui_9/article/details/79723288
 2、如何生成SSH key<br>
 https://blog.csdn.net/u014702999/article/details/52779319
 
+3、hexo的next主题个性化配置教程<br>
+https://segmentfault.com/a/1190000009544924
+
 ## git基本使用
 https://blog.csdn.net/qq_32531823/article/details/53259822<br>
 https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013758392816224cafd33c44b4451887cc941e6716805c000
