@@ -1,6 +1,7 @@
 ---
-title: 关于git的使用
+title: git的基本操作以及hexo主题个性化设置
 date: 2018-06-01 15:49:11
+description: 
 tags:
 categories:  学习
 ---

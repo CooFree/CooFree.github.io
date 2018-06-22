@@ -220,6 +220,7 @@ excerpt_description: true
 # Automatically Excerpt. Not recommend.
 # Please use <!-- more --> in the post to control excerpt accurately.
 auto_excerpt:
+#enable: true
   enable: false
   length: 150
 
@@ -599,7 +600,7 @@ calendar:
 algolia_search:
   enable: false
   hits:
-    per_page: 10
+    per_page: 1
   labels:
     input_placeholder: Search for Posts
     hits_empty: "We didn't find any results for the search: ${query}"
