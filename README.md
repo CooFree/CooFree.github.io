@@ -6,7 +6,7 @@ github排名 https://github.com/trending
 python学习
 https://github.com/521xueweihan/HelloGitHub
 
-Adobe PhotoShop CS6 （amtlib.framework破解补丁）
+Adobe PhotoShop CS6 （amtlib.framework破解补丁）<br>
 https://jingyan.baidu.com/article/fedf073756084935ac8977cb.html
 
 MVVM框架
