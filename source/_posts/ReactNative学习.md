@@ -8,6 +8,11 @@ categories:  学习
 ####  React-Native入门指南
 > https://github.com/vczero/react-native-lesson
 
+####  React-Native各类学习资源
+> https://github.com/reactnativecn/react-native-guide
+
 ####  iOS打包到真机
 > https://blog.csdn.net/ailongyang/article/details/54866469
 
+####  问题
+> https://www.jianshu.com/p/98c8f2a970eb
