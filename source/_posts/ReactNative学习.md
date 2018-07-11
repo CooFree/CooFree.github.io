@@ -16,3 +16,7 @@ categories:  学习
 
 ####  问题
 > https://www.jianshu.com/p/98c8f2a970eb
+
+> lsof -n -i4TCP:8081<br>
+> kill -9<br>
+> rm -rf node_modules && npm i
