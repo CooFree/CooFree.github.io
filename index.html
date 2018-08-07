@@ -233,6 +233,190 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/01/2018-06-01-看一遍就会的CocoaPods的安装和使用教程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CooFree">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/13346791?s=400&u=2561ab3456ba0c9e16e3f99ec5a98a6580d5c9eb&v=4">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BlueSky">
+    </span>
+    
+    
+      <header class="post-header">
+    
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/01/2018-06-01-看一遍就会的CocoaPods的安装和使用教程/" itemprop="url">看一遍就会的CocoaPods的安装和使用教程</a></h1>
+        
+    
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-01T15:49:11+08:00">
+                2018-06-01
+              </time>
+            
+    
+            
+    
+            
+          </span>
+    
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+    
+                
+                
+              
+            </span>
+          
+    
+          
+            
+          
+    
+          
+          
+    
+          
+    
+          
+    
+          
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+      
+    
+      
+        
+          
+            <h4 id="什么是CocoaPods？"><a href="#什么是CocoaPods？" class="headerlink" title="什么是CocoaPods？"></a>什么是CocoaPods？</h4><p>CocoaPods是专门为iOS工程提供对第三方库的依赖的管理工具，通过CocoaPods，我们可以更方便地管理每个第三方库的版本，而且不需要我们做太多的配置。直观、集中和自动化地管理我们项目的第三方库。</p>
+<p>我们都有这样的经历，当我们添加第三方库的时候，需要导入一堆相关依赖库，更新的时候也要删掉重新导入然后再配置。当我们需要更新某个第三方库的时候，我们又要手动移除该库，导入新的库，然后再配置。这些是很麻烦且没有意义的工作。</p>
+<p>当我们开始使用CocoaPods管理第三方库后，我们只需要相当少的配置，其它的一切都交由CocoaPods来管理即可，我们使用起来就更省心了。</p>
+<h4 id="安装CocoaPods"><a href="#安装CocoaPods" class="headerlink" title="安装CocoaPods"></a>安装CocoaPods</h4><p>1.首先更新gem到最新版本，在终端中输入：$ sudo gem update –system,注意不要把“$”复制上。等待一会儿会看到：</p>
+<p>更新gem<br>2.删除自带的ruby镜像，终端输入：gem sources –remove <a href="https://rubygems.org/。" target="_blank" rel="noopener">https://rubygems.org/。</a><br>3.添加淘宝的镜像，终端输入：gem sources -a <a href="https://gems.ruby-china.org/" target="_blank" rel="noopener">https://gems.ruby-china.org/</a>(原来的淘宝镜像 <a href="https://ruby.taobao.org/已经不能用了)。" target="_blank" rel="noopener">https://ruby.taobao.org/已经不能用了)。</a><br>4.可以用gem sources -l 来检查使用替换镜像位置成功，结果应该只有 <a href="https://gems.ruby-china.org/" target="_blank" rel="noopener">https://gems.ruby-china.org/</a> 才对。</p>
+<p>修改镜像<br>5.安装CocoaPods，终端输入：sudo gem install cocoapods。<br>等待一会儿会看到：</p>
+<p>安装CocoaPods<br>6.然后配置下CocoaPods，终端输入：pod setup。</p>
+<p>配置CocoaPods<br>等待过程可能有点长，成功后会看到：</p>
+<p>配置成功<br>到这里CocoaPods就安装好了。</p>
+<h4 id="查找第三方库"><a href="#查找第三方库" class="headerlink" title="查找第三方库"></a>查找第三方库</h4><p>比如查找MJExtension，终端输入：pod search MJExtension，第一次搜索他需要建索引，等待一会儿就可以了。</p>
+<p>建索引中<br>完成后他会自动进入一个新的页面显示搜索结果，上下滑动查看更多，要退出的话按wq就可以了。以后再搜索就不需要建索引了。</p>
+<p>查找结果</p>
+<h4 id="引入第三方库到项目中"><a href="#引入第三方库到项目中" class="headerlink" title="引入第三方库到项目中"></a>引入第三方库到项目中</h4><p>我先在桌面上新建一个Test项目，然后演示把MJExtension导进去。<br>刚开始的文件目录是这样的</p>
+<p>原始目录.png<br>1,首先打开终端，cd到Test路径下。</p>
+<p>Test</p>
+<p>2.然后生成并编辑一个Podfile文件，命令为vim Podfile，要导入的第三方都要在这里面写上。进去后需要先按I键进入编辑状态，写完后按esc，然后按shift+zz(或者先按shift+:,再按wq)就可以保存退出了。下面的动图里面都有。<br>Podfile的格式大概如下，其中’Test’为你的target的名字。<br>platform :ios,’8.0’<br>target ‘Test’ do<br>pod ‘MJExtension’, ‘~&gt; 3.0.13’<br>end<br>3.安装，命令为：pod install。</p>
+<p>安装第三方<br>安装成功之后，就可以去项目里面使用了。现在的项目文件变成了这样</p>
+<p>屏幕快照 2016-09-07 23.23.19.png<br>之前我们一直是双击Test.xcodeproj打开项目，以后我们就要双击Test.xcworkspace打开了，打开后发现项目里面多了红色框的部分，可以看到MJExtension已经被引入了。</p>
+<p>多出来的文件</p>
+<h4 id="使用第三方"><a href="#使用第三方" class="headerlink" title="使用第三方"></a>使用第三方</h4><p>你会发现当引入MJExtension的头文件时，可以#import &lt;MJExtension.h&gt;或者#import &lt;MJExtension/MJExtension.h&gt;，但是却不能在输入#import “MJExtension.h”的时候出现提示。虽然强制输入也可以编译通过，但是感觉很不爽。<br>解决这个问题的办法是在工程的Build Settings搜索Search，然后在User header search paths中添加$(SRCROOT)并选择recursive。</p>
+<p>头文件不提示的解决办法</p>
+<p>现在就可以提示#import “MJExtension.h”啦。<br>然后我们就可以在项目里面使用MJExtension的方法啦。</p>
+<p>使用MJExtension</p>
+<h4 id="增加新的第三方"><a href="#增加新的第三方" class="headerlink" title="增加新的第三方"></a>增加新的第三方</h4><p>如果使用过程中我还想添加其他的第三方怎么办，只要在Podfile里面接着添加，然后终端再执行pod install就可以了。</p>
+<p>新增第三方</p>
+<h4 id="更新CocoaPods中的第三方们。"><a href="#更新CocoaPods中的第三方们。" class="headerlink" title="更新CocoaPods中的第三方们。"></a>更新CocoaPods中的第三方们。</h4><p>第三方库们都有人在维护升级，我们需要隔断时间就要更新下我们工程中第三方库的版本。只需要终端输入命令pod update就可以了。</p>
+<p>如果遇到pod install或者pod update慢的问题，原因在于当执行以上两个命令的时候会升级CocoaPods的spec仓库，加一个参数可以省略这一步，然后速度就会提升不少。加参数的命令如下：<br>pod install –verbose –no-repo-update<br>pod update –verbose –no-repo-update</p>
+<h4 id="删除CocoaPods中的某些第三方们。"><a href="#删除CocoaPods中的某些第三方们。" class="headerlink" title="删除CocoaPods中的某些第三方们。"></a>删除CocoaPods中的某些第三方们。</h4><p>当我们需要去掉某个第三方库时，只需要在Podfile删除该引入该库的语句，然后执行pod update或者pod install就可以了。</p>
+<h4 id="将CocoaPods从项目中删除"><a href="#将CocoaPods从项目中删除" class="headerlink" title="将CocoaPods从项目中删除"></a>将CocoaPods从项目中删除</h4><p>如果你在以后的使用过程中不想用CocoaPods了怎么办？很简单，把多出来的东西们都删掉就可以了，不过为了项目正常运行，你需要手动导入已经使用的第三方们哦。</p>
+<p>将CocoaPods从项目中删除</p>
+<h4 id="升级CocoaPods"><a href="#升级CocoaPods" class="headerlink" title="升级CocoaPods"></a>升级CocoaPods</h4><p>升级CocoaPods版本的命令和安装CocoaPods的命令一样，都是sudo gem install cocoapods。<br>如果老版本升级cocoapods的时候提示Operation not permitted - /usr/bin/xcodeproj，改用命令sudo gem install -n /usr/local/bin cocoapods –pre就可以了。</p>
+<h4 id="卸载CocoaPods"><a href="#卸载CocoaPods" class="headerlink" title="卸载CocoaPods"></a>卸载CocoaPods</h4><p>卸载CocoaPods的命令是sudo gem uninstall cocoapods</p>
+<p>卸载CocoaPods<br>执行完命令后，最下面打印Successfully uninstalled cocoapods字样就代表已经成功卸载了。</p>
+<h4 id="CocoaPods-Mac-App的安装和使用"><a href="#CocoaPods-Mac-App的安装和使用" class="headerlink" title="CocoaPods Mac App的安装和使用"></a>CocoaPods Mac App的安装和使用</h4><p>CocoaPods桌面应用版下载地址：<a href="https://cocoapods.org/app" target="_blank" rel="noopener">https://cocoapods.org/app</a><br>打开应用会提示你是否安装命令行工具，选择install就也可以在命令行使用Pod了。省去了上面的步骤们，方便快捷的使用CocoaPods。</p>
+<p>是否安装命令行工具<br>现在假如要给一个Test项目加入第三方库<br>1.选择File-New Podfile from Xcode Project，去选择项目的Project文件。</p>
+<p>选择项目<br>2.填写自动生成的Podfile，并且安装。</p>
+<p>Podfile<br>然后就可以去打开工程了，是不是比命令行简单多了。<br>注意：Cocoapods.app 删掉并执行命令可能会报错：Unable to locate the CocoaPods.app application bundle. Please ensure the application is available and launch it at least once</p>
+<p>错误信息.png<br>这时候只要执行sudo gem install -n /usr/local/bin cocoapods命令就可以了。</p>
+<h4 id="CocoaPods官方使用指南"><a href="#CocoaPods官方使用指南" class="headerlink" title="CocoaPods官方使用指南"></a>CocoaPods官方使用指南</h4><p>链接：<a href="https://guides.cocoapods.org/" target="_blank" rel="noopener">https://guides.cocoapods.org/</a><br>有什么不了解的或者遇到错误可以去这里查看一下。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div>
+  
+	</div>
+    
+    <footer class="post-footer">
+      
+    
+      
+    
+      
+    
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/01/ReactNative学习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -341,6 +525,155 @@
 <blockquote>
 <p>lsof -n -i4TCP:8081<br><br>kill -9<br><br>rm -rf node_modules &amp;&amp; npm i</p>
 </blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div>
+  
+	</div>
+    
+    <footer class="post-footer">
+      
+    
+      
+    
+      
+    
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/01/vue学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CooFree">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/13346791?s=400&u=2561ab3456ba0c9e16e3f99ec5a98a6580d5c9eb&v=4">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BlueSky">
+    </span>
+    
+    
+      <header class="post-header">
+    
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/01/vue学习/" itemprop="url">vue学习</a></h1>
+        
+    
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-01T15:49:11+08:00">
+                2018-06-01
+              </time>
+            
+    
+            
+    
+            
+          </span>
+    
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+    
+                
+                
+              
+            </span>
+          
+    
+          
+            
+          
+    
+          
+          
+    
+          
+    
+          
+    
+          
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+      
+    
+      
+        
+          
+            <h4 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h4><p><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">https://github.com/vuejs/awesome-vue</a></p>
+<h4 id="前端开发规范手册"><a href="#前端开发规范手册" class="headerlink" title="前端开发规范手册"></a>前端开发规范手册</h4><p><a href="http://zhibimo.com/read/Ashu/front-end-style-guide/html/general.html" target="_blank" rel="noopener">http://zhibimo.com/read/Ashu/front-end-style-guide/html/general.html</a></p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><h5 id="1、-在vue项目中关闭ESLint方法"><a href="#1、-在vue项目中关闭ESLint方法" class="headerlink" title="1、 在vue项目中关闭ESLint方法"></a>1、 在vue项目中关闭ESLint方法<br></h5><p>找到build文件夹—&gt;webpack.base.conf.js—-&gt;module<br><img src="https://images2017.cnblogs.com/blog/385984/201711/385984-20171106102153497-998893546.png" alt="">然后重启服务，npm run dev 就可以了。</p>
+<h5 id="2、-shake-js监测手机摇一摇"><a href="#2、-shake-js监测手机摇一摇" class="headerlink" title="2、 shake.js监测手机摇一摇"></a>2、 shake.js监测手机摇一摇<br></h5><p><a href="https://blog.csdn.net/zh_rey/article/details/79155272" target="_blank" rel="noopener">https://blog.csdn.net/zh_rey/article/details/79155272</a></p>
 
           
         
@@ -543,7 +876,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/01/vue学习/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/01/关于git使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="CooFree">
@@ -562,7 +895,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/01/vue学习/" itemprop="url">vue学习</a></h1>
+                <a class="post-title-link" href="/2018/06/01/关于git使用/" itemprop="url">git的基本操作以及hexo主题个性化设置</a></h1>
         
     
         <div class="post-meta">
@@ -636,10 +969,12 @@
       
         
           
-            <h4 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h4><p><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">https://github.com/vuejs/awesome-vue</a></p>
-<h4 id="前端开发规范手册"><a href="#前端开发规范手册" class="headerlink" title="前端开发规范手册"></a>前端开发规范手册</h4><p><a href="http://zhibimo.com/read/Ashu/front-end-style-guide/html/general.html" target="_blank" rel="noopener">http://zhibimo.com/read/Ashu/front-end-style-guide/html/general.html</a></p>
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><h5 id="1、-在vue项目中关闭ESLint方法"><a href="#1、-在vue项目中关闭ESLint方法" class="headerlink" title="1、 在vue项目中关闭ESLint方法"></a>1、 在vue项目中关闭ESLint方法<br></h5><p>找到build文件夹—&gt;webpack.base.conf.js—-&gt;module<br><img src="https://images2017.cnblogs.com/blog/385984/201711/385984-20171106102153497-998893546.png" alt="">然后重启服务，npm run dev 就可以了。</p>
-<h5 id="2、-shake-js监测手机摇一摇"><a href="#2、-shake-js监测手机摇一摇" class="headerlink" title="2、 shake.js监测手机摇一摇"></a>2、 shake.js监测手机摇一摇<br></h5><p><a href="https://blog.csdn.net/zh_rey/article/details/79155272" target="_blank" rel="noopener">https://blog.csdn.net/zh_rey/article/details/79155272</a></p>
+            <h2 id="hexo-博客"><a href="#hexo-博客" class="headerlink" title="hexo 博客"></a>hexo 博客</h2><p>1、 多台电脑操作hexo个人网站<br><br><a href="https://blog.csdn.net/Zhangxiaorui_9/article/details/79723288" target="_blank" rel="noopener">https://blog.csdn.net/Zhangxiaorui_9/article/details/79723288</a></p>
+<p>2、如何生成SSH key<br><br><a href="https://blog.csdn.net/u014702999/article/details/52779319" target="_blank" rel="noopener">https://blog.csdn.net/u014702999/article/details/52779319</a></p>
+<p>3、hexo的next主题个性化配置教程<br><br><a href="https://segmentfault.com/a/1190000009544924" target="_blank" rel="noopener">https://segmentfault.com/a/1190000009544924</a></p>
+<h2 id="git基本使用"><a href="#git基本使用" class="headerlink" title="git基本使用"></a>git基本使用</h2><p><a href="https://blog.csdn.net/qq_32531823/article/details/53259822" target="_blank" rel="noopener">https://blog.csdn.net/qq_32531823/article/details/53259822</a><br><br><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013758392816224cafd33c44b4451887cc941e6716805c000" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013758392816224cafd33c44b4451887cc941e6716805c000</a></p>
+<h2 id="git遇到的问题"><a href="#git遇到的问题" class="headerlink" title="git遇到的问题"></a>git遇到的问题</h2><h5 id="1、-git-commit-没写-m-说明进入vim模式的处理"><a href="#1、-git-commit-没写-m-说明进入vim模式的处理" class="headerlink" title="1、 git commit 没写-m  说明进入vim模式的处理"></a>1、 git commit 没写-m  说明进入vim模式的处理</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入i，进入insert输入模式，输入说明</span><br><span class="line">输入完后，按ESC，下方insert消失</span><br><span class="line">输入：，再输wq，回车。</span><br></pre></td></tr></table></figure>
+<h5 id="2-、提交代码-发现空目录"><a href="#2-、提交代码-发现空目录" class="headerlink" title="2.、提交代码 发现空目录"></a>2.、提交代码 发现空目录</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">提交代码到服务器后发现git clone下来的有些目录是空的。</span><br><span class="line">查看服务器的目录果然是空的。看本季git add .    后查看git  status </span><br><span class="line"></span><br><span class="line">modified: xxx(modified content, untracked content)</span><br><span class="line">大概意思是xxx目录没有被跟踪。那自然push上去的时候是空的了</span><br><span class="line">解决办法：后来发现这主要是xxx目录下有一个.git 目录(隐藏文件，按shift+common+.可显示)，</span><br><span class="line">可能是被人给你这个目录的时候里面有了.git目录。删除.git目录。重新git add .就可</span><br></pre></td></tr></table></figure>
 
           
         
@@ -831,157 +1166,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/01/关于git使用/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CooFree">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/13346791?s=400&u=2561ab3456ba0c9e16e3f99ec5a98a6580d5c9eb&v=4">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BlueSky">
-    </span>
-    
-    
-      <header class="post-header">
-    
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/01/关于git使用/" itemprop="url">git的基本操作以及hexo主题个性化设置</a></h1>
-        
-    
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-01T15:49:11+08:00">
-                2018-06-01
-              </time>
-            
-    
-            
-    
-            
-          </span>
-    
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习/" itemprop="url" rel="index">
-                    <span itemprop="name">学习</span>
-                  </a>
-                </span>
-    
-                
-                
-              
-            </span>
-          
-    
-          
-            
-          
-    
-          
-          
-    
-          
-    
-          
-    
-          
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-      
-    
-      
-        
-          
-            <h2 id="hexo-博客"><a href="#hexo-博客" class="headerlink" title="hexo 博客"></a>hexo 博客</h2><p>1、 多台电脑操作hexo个人网站<br><br><a href="https://blog.csdn.net/Zhangxiaorui_9/article/details/79723288" target="_blank" rel="noopener">https://blog.csdn.net/Zhangxiaorui_9/article/details/79723288</a></p>
-<p>2、如何生成SSH key<br><br><a href="https://blog.csdn.net/u014702999/article/details/52779319" target="_blank" rel="noopener">https://blog.csdn.net/u014702999/article/details/52779319</a></p>
-<p>3、hexo的next主题个性化配置教程<br><br><a href="https://segmentfault.com/a/1190000009544924" target="_blank" rel="noopener">https://segmentfault.com/a/1190000009544924</a></p>
-<h2 id="git基本使用"><a href="#git基本使用" class="headerlink" title="git基本使用"></a>git基本使用</h2><p><a href="https://blog.csdn.net/qq_32531823/article/details/53259822" target="_blank" rel="noopener">https://blog.csdn.net/qq_32531823/article/details/53259822</a><br><br><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013758392816224cafd33c44b4451887cc941e6716805c000" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013758392816224cafd33c44b4451887cc941e6716805c000</a></p>
-<h2 id="git遇到的问题"><a href="#git遇到的问题" class="headerlink" title="git遇到的问题"></a>git遇到的问题</h2><h5 id="1、-git-commit-没写-m-说明进入vim模式的处理"><a href="#1、-git-commit-没写-m-说明进入vim模式的处理" class="headerlink" title="1、 git commit 没写-m  说明进入vim模式的处理"></a>1、 git commit 没写-m  说明进入vim模式的处理</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入i，进入insert输入模式，输入说明</span><br><span class="line">输入完后，按ESC，下方insert消失</span><br><span class="line">输入：，再输wq，回车。</span><br></pre></td></tr></table></figure>
-<h5 id="2-、提交代码-发现空目录"><a href="#2-、提交代码-发现空目录" class="headerlink" title="2.、提交代码 发现空目录"></a>2.、提交代码 发现空目录</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">提交代码到服务器后发现git clone下来的有些目录是空的。</span><br><span class="line">查看服务器的目录果然是空的。看本季git add .    后查看git  status </span><br><span class="line"></span><br><span class="line">modified: xxx(modified content, untracked content)</span><br><span class="line">大概意思是xxx目录没有被跟踪。那自然push上去的时候是空的了</span><br><span class="line">解决办法：后来发现这主要是xxx目录下有一个.git 目录(隐藏文件，按shift+common+.可显示)，</span><br><span class="line">可能是被人给你这个目录的时候里面有了.git目录。删除.git目录。重新git add .就可</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div>
-  
-	</div>
-    
-    <footer class="post-footer">
-      
-    
-      
-    
-      
-    
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1032,7 +1216,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
