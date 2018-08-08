@@ -329,19 +329,26 @@
             <h4 id="什么是CocoaPods？"><a href="#什么是CocoaPods？" class="headerlink" title="什么是CocoaPods？"></a>什么是CocoaPods？</h4><p>CocoaPods是专门为iOS工程提供对第三方库的依赖的管理工具，通过CocoaPods，我们可以更方便地管理每个第三方库的版本，而且不需要我们做太多的配置。直观、集中和自动化地管理我们项目的第三方库。</p>
 <p>我们都有这样的经历，当我们添加第三方库的时候，需要导入一堆相关依赖库，更新的时候也要删掉重新导入然后再配置。当我们需要更新某个第三方库的时候，我们又要手动移除该库，导入新的库，然后再配置。这些是很麻烦且没有意义的工作。</p>
 <p>当我们开始使用CocoaPods管理第三方库后，我们只需要相当少的配置，其它的一切都交由CocoaPods来管理即可，我们使用起来就更省心了。</p>
-<h4 id="安装CocoaPods"><a href="#安装CocoaPods" class="headerlink" title="安装CocoaPods"></a>安装CocoaPods</h4><p>1.首先更新gem到最新版本，在终端中输入：$ sudo gem update –system,注意不要把“$”复制上。等待一会儿会看到：</p>
-<p>更新gem<br>2.删除自带的ruby镜像，终端输入：gem sources –remove <a href="https://rubygems.org/。" target="_blank" rel="noopener">https://rubygems.org/。</a><br>3.添加淘宝的镜像，终端输入：gem sources -a <a href="https://gems.ruby-china.org/" target="_blank" rel="noopener">https://gems.ruby-china.org/</a>(原来的淘宝镜像 <a href="https://ruby.taobao.org/已经不能用了)。" target="_blank" rel="noopener">https://ruby.taobao.org/已经不能用了)。</a><br>4.可以用gem sources -l 来检查使用替换镜像位置成功，结果应该只有 <a href="https://gems.ruby-china.org/" target="_blank" rel="noopener">https://gems.ruby-china.org/</a> 才对。</p>
-<p>修改镜像<br>5.安装CocoaPods，终端输入：sudo gem install cocoapods。<br>等待一会儿会看到：</p>
-<p>安装CocoaPods<br>6.然后配置下CocoaPods，终端输入：pod setup。</p>
+<h4 id="安装CocoaPods"><a href="#安装CocoaPods" class="headerlink" title="安装CocoaPods"></a>安装CocoaPods</h4><p>1.首先更新gem到最新版本，在终端中输入：<code>sudo gem update --system</code>。等待一会儿会看到：更新gem</p>
+<p>2.删除自带的ruby镜像，终端输入：<code>gem sources --remove https://rubygems.org/</code>。</p>
+<p>3.添加淘宝的镜像，终端输入：<code>gem sources -a https://gems.ruby-china.org/</code>(原来的淘宝镜像 <a href="https://ruby.taobao.org/已经不能用了)。" target="_blank" rel="noopener">https://ruby.taobao.org/已经不能用了)。</a></p>
+<p>4可以用<code>gem sources -l</code>来检查使用替换镜像位置成功，结果应该只有 <a href="https://gems.ruby-china.org/" target="_blank" rel="noopener">https://gems.ruby-china.org/</a> 才对。</p>
+<p>修改镜像</p>
+<p>5.安装CocoaPods，终端输入：<code>sudo gem install cocoapods</code><br>等待一会儿会看到：</p>
+<p>安装CocoaPods</p>
+<p>6.然后配置下CocoaPods，终端输入：<code>pod setup</code>。</p>
 <p>配置CocoaPods<br>等待过程可能有点长，成功后会看到：</p>
 <p>配置成功<br>到这里CocoaPods就安装好了。</p>
-<h4 id="查找第三方库"><a href="#查找第三方库" class="headerlink" title="查找第三方库"></a>查找第三方库</h4><p>比如查找MJExtension，终端输入：pod search MJExtension，第一次搜索他需要建索引，等待一会儿就可以了。</p>
+<h4 id="查找第三方库"><a href="#查找第三方库" class="headerlink" title="查找第三方库"></a>查找第三方库</h4><p>比如查找MJExtension，终端输入：<code>pod search MJExtension</code>，第一次搜索他需要建索引，等待一会儿就可以了。</p>
 <p>建索引中<br>完成后他会自动进入一个新的页面显示搜索结果，上下滑动查看更多，要退出的话按wq就可以了。以后再搜索就不需要建索引了。</p>
 <p>查找结果</p>
 <h4 id="引入第三方库到项目中"><a href="#引入第三方库到项目中" class="headerlink" title="引入第三方库到项目中"></a>引入第三方库到项目中</h4><p>我先在桌面上新建一个Test项目，然后演示把MJExtension导进去。<br>刚开始的文件目录是这样的</p>
-<p>原始目录.png<br>1,首先打开终端，cd到Test路径下。</p>
-<p>Test</p>
-<p>2.然后生成并编辑一个Podfile文件，命令为vim Podfile，要导入的第三方都要在这里面写上。进去后需要先按I键进入编辑状态，写完后按esc，然后按shift+zz(或者先按shift+:,再按wq)就可以保存退出了。下面的动图里面都有。<br>Podfile的格式大概如下，其中’Test’为你的target的名字。<br>platform :ios,’8.0’<br>target ‘Test’ do<br>pod ‘MJExtension’, ‘~&gt; 3.0.13’<br>end<br>3.安装，命令为：pod install。</p>
+<p>原始目录.png</p>
+<ol>
+<li>首先打开终端，cd到Test路径下。</li>
+<li>然后生成并编辑一个Podfile文件，命令为vim Podfile，要导入的第三方都要在这里面写上。进去后需要先按I键进入编辑状态，写完后按esc，然后按shift+zz(或者先按shift+:,再按wq)就可以保存退出了。下面的动图里面都有。<br>Podfile的格式大概如下，其中’Test’为你的target的名字。<br>platform :ios,’8.0’<br>target ‘Test’ do<br>pod ‘MJExtension’, ‘~&gt; 3.0.13’<br>end</li>
+<li>安装，命令为：<code>pod install</code>。</li>
+</ol>
 <p>安装第三方<br>安装成功之后，就可以去项目里面使用了。现在的项目文件变成了这样</p>
 <p>屏幕快照 2016-09-07 23.23.19.png<br>之前我们一直是双击Test.xcodeproj打开项目，以后我们就要双击Test.xcworkspace打开了，打开后发现项目里面多了红色框的部分，可以看到MJExtension已经被引入了。</p>
 <p>多出来的文件</p>
@@ -360,8 +367,10 @@
 <h4 id="卸载CocoaPods"><a href="#卸载CocoaPods" class="headerlink" title="卸载CocoaPods"></a>卸载CocoaPods</h4><p>卸载CocoaPods的命令是sudo gem uninstall cocoapods</p>
 <p>卸载CocoaPods<br>执行完命令后，最下面打印Successfully uninstalled cocoapods字样就代表已经成功卸载了。</p>
 <h4 id="CocoaPods-Mac-App的安装和使用"><a href="#CocoaPods-Mac-App的安装和使用" class="headerlink" title="CocoaPods Mac App的安装和使用"></a>CocoaPods Mac App的安装和使用</h4><p>CocoaPods桌面应用版下载地址：<a href="https://cocoapods.org/app" target="_blank" rel="noopener">https://cocoapods.org/app</a><br>打开应用会提示你是否安装命令行工具，选择install就也可以在命令行使用Pod了。省去了上面的步骤们，方便快捷的使用CocoaPods。</p>
-<p>是否安装命令行工具<br>现在假如要给一个Test项目加入第三方库<br>1.选择File-New Podfile from Xcode Project，去选择项目的Project文件。</p>
-<p>选择项目<br>2.填写自动生成的Podfile，并且安装。</p>
+<p>是否安装命令行工具<br>现在假如要给一个Test项目加入第三方库</p>
+<p>1.选择File-New Podfile from Xcode Project，去选择项目的Project文件。</p>
+<p>选择项目</p>
+<p>2.填写自动生成的Podfile，并且安装。</p>
 <p>Podfile<br>然后就可以去打开工程了，是不是比命令行简单多了。<br>注意：Cocoapods.app 删掉并执行命令可能会报错：Unable to locate the CocoaPods.app application bundle. Please ensure the application is available and launch it at least once</p>
 <p>错误信息.png<br>这时候只要执行sudo gem install -n /usr/local/bin cocoapods命令就可以了。</p>
 <h4 id="CocoaPods官方使用指南"><a href="#CocoaPods官方使用指南" class="headerlink" title="CocoaPods官方使用指南"></a>CocoaPods官方使用指南</h4><p>链接：<a href="https://guides.cocoapods.org/" target="_blank" rel="noopener">https://guides.cocoapods.org/</a><br>有什么不了解的或者遇到错误可以去这里查看一下。</p>
@@ -876,157 +885,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/01/关于git使用/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CooFree">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/13346791?s=400&u=2561ab3456ba0c9e16e3f99ec5a98a6580d5c9eb&v=4">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BlueSky">
-    </span>
-    
-    
-      <header class="post-header">
-    
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/01/关于git使用/" itemprop="url">git的基本操作以及hexo主题个性化设置</a></h1>
-        
-    
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-01T15:49:11+08:00">
-                2018-06-01
-              </time>
-            
-    
-            
-    
-            
-          </span>
-    
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习/" itemprop="url" rel="index">
-                    <span itemprop="name">学习</span>
-                  </a>
-                </span>
-    
-                
-                
-              
-            </span>
-          
-    
-          
-            
-          
-    
-          
-          
-    
-          
-    
-          
-    
-          
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-      
-    
-      
-        
-          
-            <h2 id="hexo-博客"><a href="#hexo-博客" class="headerlink" title="hexo 博客"></a>hexo 博客</h2><p>1、 多台电脑操作hexo个人网站<br><br><a href="https://blog.csdn.net/Zhangxiaorui_9/article/details/79723288" target="_blank" rel="noopener">https://blog.csdn.net/Zhangxiaorui_9/article/details/79723288</a></p>
-<p>2、如何生成SSH key<br><br><a href="https://blog.csdn.net/u014702999/article/details/52779319" target="_blank" rel="noopener">https://blog.csdn.net/u014702999/article/details/52779319</a></p>
-<p>3、hexo的next主题个性化配置教程<br><br><a href="https://segmentfault.com/a/1190000009544924" target="_blank" rel="noopener">https://segmentfault.com/a/1190000009544924</a></p>
-<h2 id="git基本使用"><a href="#git基本使用" class="headerlink" title="git基本使用"></a>git基本使用</h2><p><a href="https://blog.csdn.net/qq_32531823/article/details/53259822" target="_blank" rel="noopener">https://blog.csdn.net/qq_32531823/article/details/53259822</a><br><br><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013758392816224cafd33c44b4451887cc941e6716805c000" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013758392816224cafd33c44b4451887cc941e6716805c000</a></p>
-<h2 id="git遇到的问题"><a href="#git遇到的问题" class="headerlink" title="git遇到的问题"></a>git遇到的问题</h2><h5 id="1、-git-commit-没写-m-说明进入vim模式的处理"><a href="#1、-git-commit-没写-m-说明进入vim模式的处理" class="headerlink" title="1、 git commit 没写-m  说明进入vim模式的处理"></a>1、 git commit 没写-m  说明进入vim模式的处理</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入i，进入insert输入模式，输入说明</span><br><span class="line">输入完后，按ESC，下方insert消失</span><br><span class="line">输入：，再输wq，回车。</span><br></pre></td></tr></table></figure>
-<h5 id="2-、提交代码-发现空目录"><a href="#2-、提交代码-发现空目录" class="headerlink" title="2.、提交代码 发现空目录"></a>2.、提交代码 发现空目录</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">提交代码到服务器后发现git clone下来的有些目录是空的。</span><br><span class="line">查看服务器的目录果然是空的。看本季git add .    后查看git  status </span><br><span class="line"></span><br><span class="line">modified: xxx(modified content, untracked content)</span><br><span class="line">大概意思是xxx目录没有被跟踪。那自然push上去的时候是空的了</span><br><span class="line">解决办法：后来发现这主要是xxx目录下有一个.git 目录(隐藏文件，按shift+common+.可显示)，</span><br><span class="line">可能是被人给你这个目录的时候里面有了.git目录。删除.git目录。重新git add .就可</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div>
-  
-	</div>
-    
-    <footer class="post-footer">
-      
-    
-      
-    
-      
-    
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/01/开发中遇到的问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1127,6 +985,157 @@
 <h4 id="5-用代码使程序转向设置页面："><a href="#5-用代码使程序转向设置页面：" class="headerlink" title="5.用代码使程序转向设置页面："></a>5.用代码使程序转向设置页面：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">NSURL *url=[NSURL URLWithString:@&quot;prefs:root=WIFI&quot;];//转向-&gt;&quot;设置wifi&quot;页面</span><br><span class="line">[[UIApplication sharedApplication] openURL:url];</span><br></pre></td></tr></table></figure>
 <h4 id="6-系统判断"><a href="#6-系统判断" class="headerlink" title="6.系统判断"></a>6.系统判断</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#define isOperatingSystemAtLeastVersion(majorVersion, minorVersion, patchVersion)[[NSProcessInfo processInfo] isOperatingSystemAtLeastVersion: (NSOperatingSystemVersion) &#123;</span><br><span class="line">    majorVersion,</span><br><span class="line">    minorVersion,</span><br><span class="line">    patchVersion</span><br><span class="line">&#125;]</span><br><span class="line"></span><br><span class="line">if (isOperatingSystemAtLeastVersion(11, 0, 0)) &#123;</span><br><span class="line">    //using new API</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    //using deprecated API</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="7-web-Cookies-每次退出应用都被清除解决方法-用于实现自动登录-https-www-jianshu-com-p-19a053e37c53"><a href="#7-web-Cookies-每次退出应用都被清除解决方法-用于实现自动登录-https-www-jianshu-com-p-19a053e37c53" class="headerlink" title="7. web Cookies 每次退出应用都被清除解决方法( 用于实现自动登录 )https://www.jianshu.com/p/19a053e37c53"></a>7. web Cookies 每次退出应用都被清除解决方法( 用于实现自动登录 )<a href="https://www.jianshu.com/p/19a053e37c53" target="_blank" rel="noopener">https://www.jianshu.com/p/19a053e37c53</a></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">NSHTTPCookieStorage* cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];</span><br><span class="line">    NSArray&lt;NSHTTPCookie *&gt; *cookies = [cookieStorage cookiesForURL:[NSURL URLWithString:baseUrl]];</span><br><span class="line">    NSMutableArray&lt;NSDictionary *&gt; *propertiesList = [[NSMutableArray alloc] init];</span><br><span class="line">    [cookies enumerateObjectsUsingBlock:^(NSHTTPCookie * _Nonnull cookie, NSUInteger idx, BOOL * _Nonnull stop) &#123;</span><br><span class="line">        NSMutableDictionary *properties = [[cookie properties] mutableCopy];</span><br><span class="line">        //将cookie过期时间设置为一年后</span><br><span class="line">        NSDate *expiresDate = [NSDate dateWithTimeIntervalSinceNow:3600*24*30*12];</span><br><span class="line">        properties[NSHTTPCookieExpires] = expiresDate;</span><br><span class="line">        //下面一行是关键,删除Cookies的discard字段，应用退出，会话结束的时候继续保留Cookies</span><br><span class="line">        [properties removeObjectForKey:NSHTTPCookieDiscard];</span><br><span class="line">         //重新设置改动后的Cookies</span><br><span class="line">        [cookieStorage setCookie:[NSHTTPCookie cookieWithProperties:properties]];</span><br><span class="line">    &#125;];</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div>
+  
+	</div>
+    
+    <footer class="post-footer">
+      
+    
+      
+    
+      
+    
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/01/关于git使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CooFree">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/13346791?s=400&u=2561ab3456ba0c9e16e3f99ec5a98a6580d5c9eb&v=4">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BlueSky">
+    </span>
+    
+    
+      <header class="post-header">
+    
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/01/关于git使用/" itemprop="url">git的基本操作以及hexo主题个性化设置</a></h1>
+        
+    
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-01T15:49:11+08:00">
+                2018-06-01
+              </time>
+            
+    
+            
+    
+            
+          </span>
+    
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+    
+                
+                
+              
+            </span>
+          
+    
+          
+            
+          
+    
+          
+          
+    
+          
+    
+          
+    
+          
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+      
+    
+      
+        
+          
+            <h2 id="hexo-博客"><a href="#hexo-博客" class="headerlink" title="hexo 博客"></a>hexo 博客</h2><p>1、 多台电脑操作hexo个人网站<br><br><a href="https://blog.csdn.net/Zhangxiaorui_9/article/details/79723288" target="_blank" rel="noopener">https://blog.csdn.net/Zhangxiaorui_9/article/details/79723288</a></p>
+<p>2、如何生成SSH key<br><br><a href="https://blog.csdn.net/u014702999/article/details/52779319" target="_blank" rel="noopener">https://blog.csdn.net/u014702999/article/details/52779319</a></p>
+<p>3、hexo的next主题个性化配置教程<br><br><a href="https://segmentfault.com/a/1190000009544924" target="_blank" rel="noopener">https://segmentfault.com/a/1190000009544924</a></p>
+<h2 id="git基本使用"><a href="#git基本使用" class="headerlink" title="git基本使用"></a>git基本使用</h2><p><a href="https://blog.csdn.net/qq_32531823/article/details/53259822" target="_blank" rel="noopener">https://blog.csdn.net/qq_32531823/article/details/53259822</a><br><br><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013758392816224cafd33c44b4451887cc941e6716805c000" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013758392816224cafd33c44b4451887cc941e6716805c000</a></p>
+<h2 id="git遇到的问题"><a href="#git遇到的问题" class="headerlink" title="git遇到的问题"></a>git遇到的问题</h2><h5 id="1、-git-commit-没写-m-说明进入vim模式的处理"><a href="#1、-git-commit-没写-m-说明进入vim模式的处理" class="headerlink" title="1、 git commit 没写-m  说明进入vim模式的处理"></a>1、 git commit 没写-m  说明进入vim模式的处理</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入i，进入insert输入模式，输入说明</span><br><span class="line">输入完后，按ESC，下方insert消失</span><br><span class="line">输入：，再输wq，回车。</span><br></pre></td></tr></table></figure>
+<h5 id="2-、提交代码-发现空目录"><a href="#2-、提交代码-发现空目录" class="headerlink" title="2.、提交代码 发现空目录"></a>2.、提交代码 发现空目录</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">提交代码到服务器后发现git clone下来的有些目录是空的。</span><br><span class="line">查看服务器的目录果然是空的。看本季git add .    后查看git  status </span><br><span class="line"></span><br><span class="line">modified: xxx(modified content, untracked content)</span><br><span class="line">大概意思是xxx目录没有被跟踪。那自然push上去的时候是空的了</span><br><span class="line">解决办法：后来发现这主要是xxx目录下有一个.git 目录(隐藏文件，按shift+common+.可显示)，</span><br><span class="line">可能是被人给你这个目录的时候里面有了.git目录。删除.git目录。重新git add .就可</span><br></pre></td></tr></table></figure>
 
           
         

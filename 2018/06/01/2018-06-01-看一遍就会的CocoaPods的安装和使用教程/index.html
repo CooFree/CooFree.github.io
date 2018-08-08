@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="BlueSky">
 <meta property="og:description" content="什么是CocoaPods？CocoaPods是专门为iOS工程提供对第三方库的依赖的管理工具，通过CocoaPods，我们可以更方便地管理每个第三方库的版本，而且不需要我们做太多的配置。直观、集中和自动化地管理我们项目的第三方库。 我们都有这样的经历，当我们添加第三方库的时候，需要导入一堆相关依赖库，更新的时候也要删掉重新导入然后再配置。当我们需要更新某个第三方库的时候，我们又要手动移除该库，导入">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-07T06:52:44.000Z">
+<meta property="og:updated_time" content="2018-08-08T01:33:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="看一遍就会的CocoaPods的安装和使用教程">
 <meta name="twitter:description" content="什么是CocoaPods？CocoaPods是专门为iOS工程提供对第三方库的依赖的管理工具，通过CocoaPods，我们可以更方便地管理每个第三方库的版本，而且不需要我们做太多的配置。直观、集中和自动化地管理我们项目的第三方库。 我们都有这样的经历，当我们添加第三方库的时候，需要导入一堆相关依赖库，更新的时候也要删掉重新导入然后再配置。当我们需要更新某个第三方库的时候，我们又要手动移除该库，导入">
@@ -328,19 +328,26 @@
         <h4 id="什么是CocoaPods？"><a href="#什么是CocoaPods？" class="headerlink" title="什么是CocoaPods？"></a>什么是CocoaPods？</h4><p>CocoaPods是专门为iOS工程提供对第三方库的依赖的管理工具，通过CocoaPods，我们可以更方便地管理每个第三方库的版本，而且不需要我们做太多的配置。直观、集中和自动化地管理我们项目的第三方库。</p>
 <p>我们都有这样的经历，当我们添加第三方库的时候，需要导入一堆相关依赖库，更新的时候也要删掉重新导入然后再配置。当我们需要更新某个第三方库的时候，我们又要手动移除该库，导入新的库，然后再配置。这些是很麻烦且没有意义的工作。</p>
 <p>当我们开始使用CocoaPods管理第三方库后，我们只需要相当少的配置，其它的一切都交由CocoaPods来管理即可，我们使用起来就更省心了。</p>
-<h4 id="安装CocoaPods"><a href="#安装CocoaPods" class="headerlink" title="安装CocoaPods"></a>安装CocoaPods</h4><p>1.首先更新gem到最新版本，在终端中输入：$ sudo gem update –system,注意不要把“$”复制上。等待一会儿会看到：</p>
-<p>更新gem<br>2.删除自带的ruby镜像，终端输入：gem sources –remove <a href="https://rubygems.org/。" target="_blank" rel="noopener">https://rubygems.org/。</a><br>3.添加淘宝的镜像，终端输入：gem sources -a <a href="https://gems.ruby-china.org/" target="_blank" rel="noopener">https://gems.ruby-china.org/</a>(原来的淘宝镜像 <a href="https://ruby.taobao.org/已经不能用了)。" target="_blank" rel="noopener">https://ruby.taobao.org/已经不能用了)。</a><br>4.可以用gem sources -l 来检查使用替换镜像位置成功，结果应该只有 <a href="https://gems.ruby-china.org/" target="_blank" rel="noopener">https://gems.ruby-china.org/</a> 才对。</p>
-<p>修改镜像<br>5.安装CocoaPods，终端输入：sudo gem install cocoapods。<br>等待一会儿会看到：</p>
-<p>安装CocoaPods<br>6.然后配置下CocoaPods，终端输入：pod setup。</p>
+<h4 id="安装CocoaPods"><a href="#安装CocoaPods" class="headerlink" title="安装CocoaPods"></a>安装CocoaPods</h4><p>1.首先更新gem到最新版本，在终端中输入：<code>sudo gem update --system</code>。等待一会儿会看到：更新gem</p>
+<p>2.删除自带的ruby镜像，终端输入：<code>gem sources --remove https://rubygems.org/</code>。</p>
+<p>3.添加淘宝的镜像，终端输入：<code>gem sources -a https://gems.ruby-china.org/</code>(原来的淘宝镜像 <a href="https://ruby.taobao.org/已经不能用了)。" target="_blank" rel="noopener">https://ruby.taobao.org/已经不能用了)。</a></p>
+<p>4可以用<code>gem sources -l</code>来检查使用替换镜像位置成功，结果应该只有 <a href="https://gems.ruby-china.org/" target="_blank" rel="noopener">https://gems.ruby-china.org/</a> 才对。</p>
+<p>修改镜像</p>
+<p>5.安装CocoaPods，终端输入：<code>sudo gem install cocoapods</code><br>等待一会儿会看到：</p>
+<p>安装CocoaPods</p>
+<p>6.然后配置下CocoaPods，终端输入：<code>pod setup</code>。</p>
 <p>配置CocoaPods<br>等待过程可能有点长，成功后会看到：</p>
 <p>配置成功<br>到这里CocoaPods就安装好了。</p>
-<h4 id="查找第三方库"><a href="#查找第三方库" class="headerlink" title="查找第三方库"></a>查找第三方库</h4><p>比如查找MJExtension，终端输入：pod search MJExtension，第一次搜索他需要建索引，等待一会儿就可以了。</p>
+<h4 id="查找第三方库"><a href="#查找第三方库" class="headerlink" title="查找第三方库"></a>查找第三方库</h4><p>比如查找MJExtension，终端输入：<code>pod search MJExtension</code>，第一次搜索他需要建索引，等待一会儿就可以了。</p>
 <p>建索引中<br>完成后他会自动进入一个新的页面显示搜索结果，上下滑动查看更多，要退出的话按wq就可以了。以后再搜索就不需要建索引了。</p>
 <p>查找结果</p>
 <h4 id="引入第三方库到项目中"><a href="#引入第三方库到项目中" class="headerlink" title="引入第三方库到项目中"></a>引入第三方库到项目中</h4><p>我先在桌面上新建一个Test项目，然后演示把MJExtension导进去。<br>刚开始的文件目录是这样的</p>
-<p>原始目录.png<br>1,首先打开终端，cd到Test路径下。</p>
-<p>Test</p>
-<p>2.然后生成并编辑一个Podfile文件，命令为vim Podfile，要导入的第三方都要在这里面写上。进去后需要先按I键进入编辑状态，写完后按esc，然后按shift+zz(或者先按shift+:,再按wq)就可以保存退出了。下面的动图里面都有。<br>Podfile的格式大概如下，其中’Test’为你的target的名字。<br>platform :ios,’8.0’<br>target ‘Test’ do<br>pod ‘MJExtension’, ‘~&gt; 3.0.13’<br>end<br>3.安装，命令为：pod install。</p>
+<p>原始目录.png</p>
+<ol>
+<li>首先打开终端，cd到Test路径下。</li>
+<li>然后生成并编辑一个Podfile文件，命令为vim Podfile，要导入的第三方都要在这里面写上。进去后需要先按I键进入编辑状态，写完后按esc，然后按shift+zz(或者先按shift+:,再按wq)就可以保存退出了。下面的动图里面都有。<br>Podfile的格式大概如下，其中’Test’为你的target的名字。<br>platform :ios,’8.0’<br>target ‘Test’ do<br>pod ‘MJExtension’, ‘~&gt; 3.0.13’<br>end</li>
+<li>安装，命令为：<code>pod install</code>。</li>
+</ol>
 <p>安装第三方<br>安装成功之后，就可以去项目里面使用了。现在的项目文件变成了这样</p>
 <p>屏幕快照 2016-09-07 23.23.19.png<br>之前我们一直是双击Test.xcodeproj打开项目，以后我们就要双击Test.xcworkspace打开了，打开后发现项目里面多了红色框的部分，可以看到MJExtension已经被引入了。</p>
 <p>多出来的文件</p>
@@ -359,8 +366,10 @@
 <h4 id="卸载CocoaPods"><a href="#卸载CocoaPods" class="headerlink" title="卸载CocoaPods"></a>卸载CocoaPods</h4><p>卸载CocoaPods的命令是sudo gem uninstall cocoapods</p>
 <p>卸载CocoaPods<br>执行完命令后，最下面打印Successfully uninstalled cocoapods字样就代表已经成功卸载了。</p>
 <h4 id="CocoaPods-Mac-App的安装和使用"><a href="#CocoaPods-Mac-App的安装和使用" class="headerlink" title="CocoaPods Mac App的安装和使用"></a>CocoaPods Mac App的安装和使用</h4><p>CocoaPods桌面应用版下载地址：<a href="https://cocoapods.org/app" target="_blank" rel="noopener">https://cocoapods.org/app</a><br>打开应用会提示你是否安装命令行工具，选择install就也可以在命令行使用Pod了。省去了上面的步骤们，方便快捷的使用CocoaPods。</p>
-<p>是否安装命令行工具<br>现在假如要给一个Test项目加入第三方库<br>1.选择File-New Podfile from Xcode Project，去选择项目的Project文件。</p>
-<p>选择项目<br>2.填写自动生成的Podfile，并且安装。</p>
+<p>是否安装命令行工具<br>现在假如要给一个Test项目加入第三方库</p>
+<p>1.选择File-New Podfile from Xcode Project，去选择项目的Project文件。</p>
+<p>选择项目</p>
+<p>2.填写自动生成的Podfile，并且安装。</p>
 <p>Podfile<br>然后就可以去打开工程了，是不是比命令行简单多了。<br>注意：Cocoapods.app 删掉并执行命令可能会报错：Unable to locate the CocoaPods.app application bundle. Please ensure the application is available and launch it at least once</p>
 <p>错误信息.png<br>这时候只要执行sudo gem install -n /usr/local/bin cocoapods命令就可以了。</p>
 <h4 id="CocoaPods官方使用指南"><a href="#CocoaPods官方使用指南" class="headerlink" title="CocoaPods官方使用指南"></a>CocoaPods官方使用指南</h4><p>链接：<a href="https://guides.cocoapods.org/" target="_blank" rel="noopener">https://guides.cocoapods.org/</a><br>有什么不了解的或者遇到错误可以去这里查看一下。</p>
