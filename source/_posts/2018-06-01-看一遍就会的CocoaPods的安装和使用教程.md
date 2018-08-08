@@ -15,22 +15,22 @@ CocoaPods是专门为iOS工程提供对第三方库的依赖的管理工具，�
 
 #### 安装CocoaPods
 
-1.首先更新gem到最新版本，在终端中输入：$ sudo gem update --system,注意不要把“$”复制上。等待一会儿会看到：
+1.首先更新gem到最新版本，在终端中输入：`sudo gem update --system`。等待一会儿会看到：更新gem
 
+2.删除自带的ruby镜像，终端输入：`gem sources --remove https://rubygems.org/`。
 
-更新gem
-2.删除自带的ruby镜像，终端输入：gem sources --remove https://rubygems.org/。
-3.添加淘宝的镜像，终端输入：gem sources -a https://gems.ruby-china.org/(原来的淘宝镜像 https://ruby.taobao.org/已经不能用了)。
-4.可以用gem sources -l 来检查使用替换镜像位置成功，结果应该只有 https://gems.ruby-china.org/ 才对。
+3.添加淘宝的镜像，终端输入：`gem sources -a https://gems.ruby-china.org/`(原来的淘宝镜像 https://ruby.taobao.org/已经不能用了)。
 
+4可以用`gem sources -l `来检查使用替换镜像位置成功，结果应该只有 https://gems.ruby-china.org/ 才对。
 
 修改镜像
-5.安装CocoaPods，终端输入：sudo gem install cocoapods。
+
+5.安装CocoaPods，终端输入：`sudo gem install cocoapods`
 等待一会儿会看到：
 
-
 安装CocoaPods
-6.然后配置下CocoaPods，终端输入：pod setup。
+
+6.然后配置下CocoaPods，终端输入：`pod setup`。
 
 
 配置CocoaPods
@@ -42,7 +42,7 @@ CocoaPods是专门为iOS工程提供对第三方库的依赖的管理工具，�
 
 #### 查找第三方库
 
-比如查找MJExtension，终端输入：pod search MJExtension，第一次搜索他需要建索引，等待一会儿就可以了。
+比如查找MJExtension，终端输入：`pod search MJExtension`，第一次搜索他需要建索引，等待一会儿就可以了。
 
 
 建索引中
@@ -55,20 +55,16 @@ CocoaPods是专门为iOS工程提供对第三方库的依赖的管理工具，�
 我先在桌面上新建一个Test项目，然后演示把MJExtension导进去。
 刚开始的文件目录是这样的
 
-
 原始目录.png
-1,首先打开终端，cd到Test路径下。
 
-
-Test
-
-2.然后生成并编辑一个Podfile文件，命令为vim Podfile，要导入的第三方都要在这里面写上。进去后需要先按I键进入编辑状态，写完后按esc，然后按shift+zz(或者先按shift+:,再按wq)就可以保存退出了。下面的动图里面都有。
-Podfile的格式大概如下，其中'Test'为你的target的名字。
-platform :ios,'8.0'
-target 'Test' do
-pod 'MJExtension', '~> 3.0.13'
-end
-3.安装，命令为：pod install。
+1. 首先打开终端，cd到Test路径下。
+2. 然后生成并编辑一个Podfile文件，命令为vim Podfile，要导入的第三方都要在这里面写上。进去后需要先按I键进入编辑状态，写完后按esc，然后按shift+zz(或者先按shift+:,再按wq)就可以保存退出了。下面的动图里面都有。
+   Podfile的格式大概如下，其中'Test'为你的target的名字。
+   platform :ios,'8.0'
+   target 'Test' do
+   pod 'MJExtension', '~> 3.0.13'
+   end
+3. 安装，命令为：`pod install`。
 
 
 安装第三方
@@ -135,13 +131,13 @@ pod update --verbose --no-repo-update
 CocoaPods桌面应用版下载地址：https://cocoapods.org/app
 打开应用会提示你是否安装命令行工具，选择install就也可以在命令行使用Pod了。省去了上面的步骤们，方便快捷的使用CocoaPods。
 
-
 是否安装命令行工具
 现在假如要给一个Test项目加入第三方库
+
 1.选择File-New Podfile from Xcode Project，去选择项目的Project文件。
 
-
 选择项目
+
 2.填写自动生成的Podfile，并且安装。
 
 
