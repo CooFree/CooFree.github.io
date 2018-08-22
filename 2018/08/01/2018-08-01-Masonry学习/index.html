@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="1.键盘透明1textField.keyboardAppearance = UIKeyboardAppearanceAlert; 2.状态栏的网络活动风火轮是否旋转1[UIApplication sharedApplication].networkActivityIndicatorVisible，默认值是NO。 3.NSMutableAttributedString 行间距、段落间距1234567">
+<meta name="description" content="Masonry比例用法有时子视图的需要在父视图中等比例的显示，一般会用到multipliedBy(0.2)或者dividedBy(5),这两者使用的效果一样12345678910长度关系和位置关系，不能做比例运算。举个例子我现在希望子视图的横向中心线(centerY)在高度的1/5处，一般的想法是 make.centerY.mas_equalTo(self.height).multipliedBy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="开发中遇到的问题">
-<meta property="og:url" content="http://yoursite.com/2018/06/01/开发中遇到的问题/index.html">
+<meta property="og:title" content="Masonry学习">
+<meta property="og:url" content="http://yoursite.com/2018/08/01/2018-08-01-Masonry学习/index.html">
 <meta property="og:site_name" content="BlueSky">
-<meta property="og:description" content="1.键盘透明1textField.keyboardAppearance = UIKeyboardAppearanceAlert; 2.状态栏的网络活动风火轮是否旋转1[UIApplication sharedApplication].networkActivityIndicatorVisible，默认值是NO。 3.NSMutableAttributedString 行间距、段落间距1234567">
+<meta property="og:description" content="Masonry比例用法有时子视图的需要在父视图中等比例的显示，一般会用到multipliedBy(0.2)或者dividedBy(5),这两者使用的效果一样12345678910长度关系和位置关系，不能做比例运算。举个例子我现在希望子视图的横向中心线(centerY)在高度的1/5处，一般的想法是 make.centerY.mas_equalTo(self.height).multipliedBy">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-22T06:31:24.000Z">
+<meta property="og:updated_time" content="2018-08-22T02:24:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="开发中遇到的问题">
-<meta name="twitter:description" content="1.键盘透明1textField.keyboardAppearance = UIKeyboardAppearanceAlert; 2.状态栏的网络活动风火轮是否旋转1[UIApplication sharedApplication].networkActivityIndicatorVisible，默认值是NO。 3.NSMutableAttributedString 行间距、段落间距1234567">
+<meta name="twitter:title" content="Masonry学习">
+<meta name="twitter:description" content="Masonry比例用法有时子视图的需要在父视图中等比例的显示，一般会用到multipliedBy(0.2)或者dividedBy(5),这两者使用的效果一样12345678910长度关系和位置关系，不能做比例运算。举个例子我现在希望子视图的横向中心线(centerY)在高度的1/5处，一般的想法是 make.centerY.mas_equalTo(self.height).multipliedBy">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/01/开发中遇到的问题/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/01/2018-08-01-Masonry学习/"/>
 
 
 
 
 
-  <title>开发中遇到的问题 | BlueSky</title>
+  <title>Masonry学习 | BlueSky</title>
   
 
 
@@ -236,7 +236,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/01/开发中遇到的问题/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/01/2018-08-01-Masonry学习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="CooFree">
@@ -253,7 +253,7 @@
     
         
         
-          <h1 class="post-title" itemprop="name headline">开发中遇到的问题</h1>
+          <h1 class="post-title" itemprop="name headline">Masonry学习</h1>
         
     
         <div class="post-meta">
@@ -265,8 +265,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-01T15:49:11+08:00">
-                2018-06-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-01T15:49:11+08:00">
+                2018-08-01
               </time>
             
     
@@ -288,8 +288,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/问题/" itemprop="url" rel="index">
-                    <span itemprop="name">问题</span>
+                  <a href="/categories/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
                   </a>
                 </span>
     
@@ -325,13 +325,12 @@
       
     
       
-        <h4 id="1-键盘透明"><a href="#1-键盘透明" class="headerlink" title="1.键盘透明"></a>1.键盘透明</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">textField.keyboardAppearance = UIKeyboardAppearanceAlert;</span><br></pre></td></tr></table></figure>
-<h4 id="2-状态栏的网络活动风火轮是否旋转"><a href="#2-状态栏的网络活动风火轮是否旋转" class="headerlink" title="2.状态栏的网络活动风火轮是否旋转"></a>2.状态栏的网络活动风火轮是否旋转</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[UIApplication sharedApplication].networkActivityIndicatorVisible，默认值是NO。</span><br></pre></td></tr></table></figure>
-<h4 id="3-NSMutableAttributedString-行间距、段落间距"><a href="#3-NSMutableAttributedString-行间距、段落间距" class="headerlink" title="3.NSMutableAttributedString 行间距、段落间距"></a>3.NSMutableAttributedString 行间距、段落间距</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:dLabelString];  </span><br><span class="line">NSMutableParagraphStyle   *paragraphStyle   = [[NSMutableParagraphStyle alloc] init];  </span><br><span class="line"></span><br><span class="line">//行间距  </span><br><span class="line">[paragraphStyle setLineSpacing:5.0];  </span><br><span class="line">//段落间距  </span><br><span class="line">[paragraphStyle setParagraphSpacing:10.0];  </span><br><span class="line">//第一行头缩进  </span><br><span class="line">[paragraphStyle setFirstLineHeadIndent:15.0];  </span><br><span class="line">//头部缩进  </span><br><span class="line">//[paragraphStyle setHeadIndent:15.0];  </span><br><span class="line">//尾部缩进  </span><br><span class="line">//[paragraphStyle setTailIndent:250.0];  </span><br><span class="line">//最小行高  </span><br><span class="line">//[paragraphStyle setMinimumLineHeight:20.0];  </span><br><span class="line">//最大行高  </span><br><span class="line">//[paragraphStyle setMaximumLineHeight:20.0];  </span><br><span class="line">      </span><br><span class="line">[attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [dLabelString length])];  </span><br><span class="line">[dLabel setAttributedText:attributedString];</span><br></pre></td></tr></table></figure>
-<h4 id="4-跳转storyBoard"><a href="#4-跳转storyBoard" class="headerlink" title="4.跳转storyBoard"></a>4.跳转storyBoard</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1.获取第一个视图storyBoard</span><br><span class="line"> /* 加载名为storyboardName的Storyboard */</span><br><span class="line"> UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle:nil];</span><br><span class="line"> </span><br><span class="line"> /* 获取storyboard的InitialViewController 即根控制器*/</span><br><span class="line"> FirstViewController *vc = [storyboard instantiateInitialViewController];</span><br><span class="line"> 其中UIViewController可以根据当前视图进行替换，替换成StoryBoard对应的视图类，然后选择跳转方式</span><br><span class="line"> 2.获取第二个视图storyboard的某个视图控制器的时候使用</span><br><span class="line">  SecondViewController *VC= [storyboard instantiateViewControllerWithIdentifier:@&quot;NewVC”];(这个过程需要在StoryBoard中设置目标视图的Custom Class和StoryBoard ID)</span><br><span class="line"> //跳转事件的实现</span><br><span class="line"> 在第一个视图添加按钮跳转到第二个视图</span><br><span class="line"> [self.navigationController pushViewController:VC animated:YES];(第一个视图是带有导航栏的)</span><br></pre></td></tr></table></figure>
-<h4 id="5-用代码使程序转向设置页面："><a href="#5-用代码使程序转向设置页面：" class="headerlink" title="5.用代码使程序转向设置页面："></a>5.用代码使程序转向设置页面：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">NSURL *url=[NSURL URLWithString:@&quot;prefs:root=WIFI&quot;];//转向-&gt;&quot;设置wifi&quot;页面</span><br><span class="line">[[UIApplication sharedApplication] openURL:url];</span><br></pre></td></tr></table></figure>
-<h4 id="6-系统判断"><a href="#6-系统判断" class="headerlink" title="6.系统判断"></a>6.系统判断</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#define isOperatingSystemAtLeastVersion(majorVersion, minorVersion, patchVersion)[[NSProcessInfo processInfo] isOperatingSystemAtLeastVersion: (NSOperatingSystemVersion) &#123;</span><br><span class="line">    majorVersion,</span><br><span class="line">    minorVersion,</span><br><span class="line">    patchVersion</span><br><span class="line">&#125;]</span><br><span class="line"></span><br><span class="line">if (isOperatingSystemAtLeastVersion(11, 0, 0)) &#123;</span><br><span class="line">    //using new API</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    //using deprecated API</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="7-web-Cookies-每次退出应用都被清除解决方法-用于实现自动登录-https-www-jianshu-com-p-19a053e37c53"><a href="#7-web-Cookies-每次退出应用都被清除解决方法-用于实现自动登录-https-www-jianshu-com-p-19a053e37c53" class="headerlink" title="7. web Cookies 每次退出应用都被清除解决方法( 用于实现自动登录 )https://www.jianshu.com/p/19a053e37c53"></a>7. web Cookies 每次退出应用都被清除解决方法( 用于实现自动登录 )<a href="https://www.jianshu.com/p/19a053e37c53" target="_blank" rel="noopener">https://www.jianshu.com/p/19a053e37c53</a></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">NSHTTPCookieStorage* cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];</span><br><span class="line">    NSArray&lt;NSHTTPCookie *&gt; *cookies = [cookieStorage cookiesForURL:[NSURL URLWithString:baseUrl]];</span><br><span class="line">    NSMutableArray&lt;NSDictionary *&gt; *propertiesList = [[NSMutableArray alloc] init];</span><br><span class="line">    [cookies enumerateObjectsUsingBlock:^(NSHTTPCookie * _Nonnull cookie, NSUInteger idx, BOOL * _Nonnull stop) &#123;</span><br><span class="line">        NSMutableDictionary *properties = [[cookie properties] mutableCopy];</span><br><span class="line">        //将cookie过期时间设置为一年后</span><br><span class="line">        NSDate *expiresDate = [NSDate dateWithTimeIntervalSinceNow:3600*24*30*12];</span><br><span class="line">        properties[NSHTTPCookieExpires] = expiresDate;</span><br><span class="line">        //下面一行是关键,删除Cookies的discard字段，应用退出，会话结束的时候继续保留Cookies</span><br><span class="line">        [properties removeObjectForKey:NSHTTPCookieDiscard];</span><br><span class="line">         //重新设置改动后的Cookies</span><br><span class="line">        [cookieStorage setCookie:[NSHTTPCookie cookieWithProperties:properties]];</span><br><span class="line">    &#125;];</span><br></pre></td></tr></table></figure>
+        <h4 id="Masonry比例用法"><a href="#Masonry比例用法" class="headerlink" title="Masonry比例用法"></a>Masonry比例用法</h4><p>有时子视图的需要在父视图中等比例的显示，一般会用到multipliedBy(0.2)或者dividedBy(5),这两者使用的效果一样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">长度关系和位置关系，不能做比例运算。</span><br><span class="line">举个例子</span><br><span class="line">我现在希望子视图的横向中心线(centerY)在高度的1/5处，一般的想法是 </span><br><span class="line">make.centerY.mas_equalTo(self.height).multipliedBy(0.2); </span><br><span class="line">运行出错。</span><br><span class="line">正确的做法是make.centerY.mas_equalTo(self.bottom).multipliedBy(0.2); </span><br><span class="line">同理，我想子视图的垂直中心线(centerX)在宽的1/5处，应为 </span><br><span class="line">make.centerX.mas_equalTo(self.right).dividedBy(5);</span><br><span class="line">最后，高度和宽度的比例那就更容易理解了. </span><br><span class="line">make.height.mas_equalTo(self.height).dividedBy(5); (子视图高度是父视图高度的1/5)</span><br></pre></td></tr></table></figure></p>
+<h3 id="Masonry-等间隔或等宽高排列多个控件"><a href="#Masonry-等间隔或等宽高排列多个控件" class="headerlink" title="Masonry 等间隔或等宽高排列多个控件"></a>Masonry 等间隔或等宽高排列多个控件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">- (NSMutableArray *)masonryViewArray &#123;</span><br><span class="line"></span><br><span class="line">    if (!_masonryViewArray) &#123;</span><br><span class="line">        </span><br><span class="line">        _masonryViewArray = [NSMutableArray array];</span><br><span class="line">        for (int i = 0; i &lt; 4; i ++) &#123;</span><br><span class="line">            </span><br><span class="line">            UIView *view = [[UIView alloc] init];</span><br><span class="line">            view.backgroundColor = [UIColor redColor];</span><br><span class="line">            [self.view addSubview:view];</span><br><span class="line">            [_masonryViewArray addObject:view];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    return _masonryViewArray;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="1、水平方向排列、固定控件间隔、控件长度不定"><a href="#1、水平方向排列、固定控件间隔、控件长度不定" class="headerlink" title="1、水平方向排列、固定控件间隔、控件长度不定"></a>1、水平方向排列、固定控件间隔、控件长度不定</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">- (void)test_masonry_horizontal_fixSpace &#123;</span><br><span class="line"></span><br><span class="line">    // 实现masonry水平固定间隔方法</span><br><span class="line">    [self.masonryViewArray mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:30 leadSpacing:10 tailSpacing:10];</span><br><span class="line">    </span><br><span class="line">    // 设置array的垂直方向的约束</span><br><span class="line">    [self.masonryViewArray mas_makeConstraints:^(MASConstraintMaker *make) &#123;</span><br><span class="line">    </span><br><span class="line">        make.top.equalTo(150);</span><br><span class="line">        make.height.equalTo(80);</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2、水平方向排列、固定控件长度、控件间隔不定"><a href="#2、水平方向排列、固定控件长度、控件间隔不定" class="headerlink" title="2、水平方向排列、固定控件长度、控件间隔不定"></a>2、水平方向排列、固定控件长度、控件间隔不定</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">- (void)test_masonry_horizontal_fixItemWidth &#123;</span><br><span class="line">    </span><br><span class="line">    // 实现masonry水平固定控件宽度方法</span><br><span class="line">    [self.masonryViewArray mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedItemLength:80 leadSpacing:10 tailSpacing:10];</span><br><span class="line">    </span><br><span class="line">    // 设置array的垂直方向的约束</span><br><span class="line">    [self.masonryViewArray mas_makeConstraints:^(MASConstraintMaker *make) &#123;</span><br><span class="line">        </span><br><span class="line">        make.top.equalTo(150);</span><br><span class="line">        make.height.equalTo(80);</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3、垂直方向排列、固定控件间隔、控件高度不定"><a href="#3、垂直方向排列、固定控件间隔、控件高度不定" class="headerlink" title="3、垂直方向排列、固定控件间隔、控件高度不定"></a>3、垂直方向排列、固定控件间隔、控件高度不定</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">- (void)test_masonry_vertical_fixSpace &#123;</span><br><span class="line">    </span><br><span class="line">    // 实现masonry垂直固定控件高度方法</span><br><span class="line">    [self.masonryViewArray mas_distributeViewsAlongAxis:MASAxisTypeVertical withFixedSpacing:30 leadSpacing:10 tailSpacing:10];</span><br><span class="line">    </span><br><span class="line">    // 设置array的水平方向的约束</span><br><span class="line">    [self.masonryViewArray mas_makeConstraints:^(MASConstraintMaker *make) &#123;</span><br><span class="line">        </span><br><span class="line">        make.left.equalTo(150);</span><br><span class="line">        make.width.equalTo(80);</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4、垂直方向排列、固定控件高度、控件间隔不定"><a href="#4、垂直方向排列、固定控件高度、控件间隔不定" class="headerlink" title="4、垂直方向排列、固定控件高度、控件间隔不定"></a>4、垂直方向排列、固定控件高度、控件间隔不定</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">- (void)test_masonry_vertical_fixItemWidth &#123;</span><br><span class="line">    </span><br><span class="line">    // 实现masonry垂直方向固定控件高度方法</span><br><span class="line">    [self.masonryViewArray mas_distributeViewsAlongAxis:MASAxisTypeVertical withFixedItemLength:80 leadSpacing:10 tailSpacing:10];</span><br><span class="line">    </span><br><span class="line">    // 设置array的水平方向的约束</span><br><span class="line">    [self.masonryViewArray mas_makeConstraints:^(MASConstraintMaker *make) &#123;</span><br><span class="line">        </span><br><span class="line">        make.left.equalTo(150);</span><br><span class="line">        make.width.equalTo(80);</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -366,8 +365,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/01/关于git使用/" rel="next" title="git的基本操作以及hexo主题个性化设置">
-                <i class="fa fa-chevron-left"></i> git的基本操作以及hexo主题个性化设置
+              <a href="/2018/06/01/2018-06-01-看一遍就会的CocoaPods的安装和使用教程/" rel="next" title="看一遍就会的CocoaPods的安装和使用教程">
+                <i class="fa fa-chevron-left"></i> 看一遍就会的CocoaPods的安装和使用教程
               </a>
             
           </div>
@@ -375,10 +374,6 @@
           <span class="post-nav-divider"></span>
     
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/01/markdown工具typora常用流程图/" rel="prev" title="markdown工具typora常用流程图">
-                markdown工具typora常用流程图 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -515,7 +510,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-键盘透明"><span class="nav-number">1.</span> <span class="nav-text">1.键盘透明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-状态栏的网络活动风火轮是否旋转"><span class="nav-number">2.</span> <span class="nav-text">2.状态栏的网络活动风火轮是否旋转</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-NSMutableAttributedString-行间距、段落间距"><span class="nav-number">3.</span> <span class="nav-text">3.NSMutableAttributedString 行间距、段落间距</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-跳转storyBoard"><span class="nav-number">4.</span> <span class="nav-text">4.跳转storyBoard</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-用代码使程序转向设置页面："><span class="nav-number">5.</span> <span class="nav-text">5.用代码使程序转向设置页面：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-系统判断"><span class="nav-number">6.</span> <span class="nav-text">6.系统判断</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-web-Cookies-每次退出应用都被清除解决方法-用于实现自动登录-https-www-jianshu-com-p-19a053e37c53"><span class="nav-number">7.</span> <span class="nav-text">7. web Cookies 每次退出应用都被清除解决方法( 用于实现自动登录 )https://www.jianshu.com/p/19a053e37c53</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Masonry比例用法"><span class="nav-number">1.</span> <span class="nav-text">Masonry比例用法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Masonry-等间隔或等宽高排列多个控件"><span class="nav-number"></span> <span class="nav-text">Masonry 等间隔或等宽高排列多个控件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、水平方向排列、固定控件间隔、控件长度不定"><span class="nav-number">1.</span> <span class="nav-text">1、水平方向排列、固定控件间隔、控件长度不定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、水平方向排列、固定控件长度、控件间隔不定"><span class="nav-number">2.</span> <span class="nav-text">2、水平方向排列、固定控件长度、控件间隔不定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、垂直方向排列、固定控件间隔、控件高度不定"><span class="nav-number">3.</span> <span class="nav-text">3、垂直方向排列、固定控件间隔、控件高度不定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、垂直方向排列、固定控件高度、控件间隔不定"><span class="nav-number">4.</span> <span class="nav-text">4、垂直方向排列、固定控件高度、控件间隔不定</span></a></li></ol></div>
             
 
           </div>
