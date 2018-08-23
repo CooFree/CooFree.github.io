@@ -384,6 +384,166 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/01/ReactNative学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CooFree">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/13346791?s=400&u=2561ab3456ba0c9e16e3f99ec5a98a6580d5c9eb&v=4">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BlueSky">
+    </span>
+    
+    
+      <header class="post-header">
+    
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/01/ReactNative学习/" itemprop="url">ReacNative学习</a></h1>
+        
+    
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-01T15:49:11+08:00">
+                2018-06-01
+              </time>
+            
+    
+            
+    
+            
+          </span>
+    
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+    
+                
+                
+              
+            </span>
+          
+    
+          
+            
+          
+    
+          
+          
+    
+          
+    
+          
+    
+          
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+      
+    
+      
+        
+          
+            <h4 id="React-Native入门指南"><a href="#React-Native入门指南" class="headerlink" title="React-Native入门指南"></a>React-Native入门指南</h4><blockquote>
+<p><a href="https://github.com/vczero/react-native-lesson" target="_blank" rel="noopener">https://github.com/vczero/react-native-lesson</a></p>
+</blockquote>
+<h4 id="React-Native各类学习资源"><a href="#React-Native各类学习资源" class="headerlink" title="React-Native各类学习资源"></a>React-Native各类学习资源</h4><blockquote>
+<p><a href="https://github.com/reactnativecn/react-native-guide" target="_blank" rel="noopener">https://github.com/reactnativecn/react-native-guide</a></p>
+</blockquote>
+<h4 id="iOS打包到真机"><a href="#iOS打包到真机" class="headerlink" title="iOS打包到真机"></a>iOS打包到真机</h4><blockquote>
+<p><a href="https://blog.csdn.net/ailongyang/article/details/54866469" target="_blank" rel="noopener">https://blog.csdn.net/ailongyang/article/details/54866469</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">1.进入rn项目的ios工程文件夹，找到和rn项目同名的文件件，打开AppDelegate.m文件，将这一行注释掉(为了方便真机和模拟器间的切换，尽量注释)：</span><br><span class="line"></span><br><span class="line">jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@&quot;index.ios&quot; fallbackResource:nil];</span><br><span class="line">新加一行：</span><br><span class="line"></span><br><span class="line">jsCodeLocation = [[NSBundle mainBundle] URLForResource:@&quot;index.ios&quot; withExtension:@&quot;jsbundle&quot;];</span><br><span class="line">如果需要切换回模拟器调试，只需要将新加这行注释掉，并恢复原代码即可。</span><br><span class="line"></span><br><span class="line">新加这行代码大概意思就是告诉native rn代码的入口，我们会在下一步生成这个jsbundle。</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">2.打开终端，进入你的rn工程，在根目录下执行bundle命令：</span><br><span class="line"></span><br><span class="line">react-native bundle --entry-file ./index.ios.js --bundle-output ./ios/bundle/index.ios.jsbundle --platform ios --assets-dest ./ios/bundle --dev false</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><blockquote>
+<p><a href="https://www.jianshu.com/p/98c8f2a970eb" target="_blank" rel="noopener">https://www.jianshu.com/p/98c8f2a970eb</a></p>
+</blockquote>
+<blockquote>
+<p>lsof -n -i4TCP:8081<br><br>kill -9<br><br>rm -rf node_modules &amp;&amp; npm i</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div>
+  
+	</div>
+    
+    <footer class="post-footer">
+      
+    
+      
+    
+      
+    
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/01/2018-06-01-看一遍就会的CocoaPods的安装和使用教程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -525,166 +685,6 @@
 <p>Podfile<br>然后就可以去打开工程了，是不是比命令行简单多了。<br>注意：Cocoapods.app 删掉并执行命令可能会报错：Unable to locate the CocoaPods.app application bundle. Please ensure the application is available and launch it at least once</p>
 <p>错误信息.png<br>这时候只要执行sudo gem install -n /usr/local/bin cocoapods命令就可以了。</p>
 <h4 id="CocoaPods官方使用指南"><a href="#CocoaPods官方使用指南" class="headerlink" title="CocoaPods官方使用指南"></a>CocoaPods官方使用指南</h4><p>链接：<a href="https://guides.cocoapods.org/" target="_blank" rel="noopener">https://guides.cocoapods.org/</a><br>有什么不了解的或者遇到错误可以去这里查看一下。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div>
-  
-	</div>
-    
-    <footer class="post-footer">
-      
-    
-      
-    
-      
-    
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/01/ReactNative学习/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CooFree">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/13346791?s=400&u=2561ab3456ba0c9e16e3f99ec5a98a6580d5c9eb&v=4">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BlueSky">
-    </span>
-    
-    
-      <header class="post-header">
-    
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/01/ReactNative学习/" itemprop="url">ReacNative学习</a></h1>
-        
-    
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-01T15:49:11+08:00">
-                2018-06-01
-              </time>
-            
-    
-            
-    
-            
-          </span>
-    
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习/" itemprop="url" rel="index">
-                    <span itemprop="name">学习</span>
-                  </a>
-                </span>
-    
-                
-                
-              
-            </span>
-          
-    
-          
-            
-          
-    
-          
-          
-    
-          
-    
-          
-    
-          
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-      
-    
-      
-        
-          
-            <h4 id="React-Native入门指南"><a href="#React-Native入门指南" class="headerlink" title="React-Native入门指南"></a>React-Native入门指南</h4><blockquote>
-<p><a href="https://github.com/vczero/react-native-lesson" target="_blank" rel="noopener">https://github.com/vczero/react-native-lesson</a></p>
-</blockquote>
-<h4 id="React-Native各类学习资源"><a href="#React-Native各类学习资源" class="headerlink" title="React-Native各类学习资源"></a>React-Native各类学习资源</h4><blockquote>
-<p><a href="https://github.com/reactnativecn/react-native-guide" target="_blank" rel="noopener">https://github.com/reactnativecn/react-native-guide</a></p>
-</blockquote>
-<h4 id="iOS打包到真机"><a href="#iOS打包到真机" class="headerlink" title="iOS打包到真机"></a>iOS打包到真机</h4><blockquote>
-<p><a href="https://blog.csdn.net/ailongyang/article/details/54866469" target="_blank" rel="noopener">https://blog.csdn.net/ailongyang/article/details/54866469</a></p>
-</blockquote>
-<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><blockquote>
-<p><a href="https://www.jianshu.com/p/98c8f2a970eb" target="_blank" rel="noopener">https://www.jianshu.com/p/98c8f2a970eb</a></p>
-</blockquote>
-<blockquote>
-<p>lsof -n -i4TCP:8081<br><br>kill -9<br><br>rm -rf node_modules &amp;&amp; npm i</p>
-</blockquote>
 
           
         
@@ -1036,157 +1036,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/01/关于git使用/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CooFree">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/13346791?s=400&u=2561ab3456ba0c9e16e3f99ec5a98a6580d5c9eb&v=4">
-    </span>
-    
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BlueSky">
-    </span>
-    
-    
-      <header class="post-header">
-    
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/01/关于git使用/" itemprop="url">git的基本操作以及hexo主题个性化设置</a></h1>
-        
-    
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-01T15:49:11+08:00">
-                2018-06-01
-              </time>
-            
-    
-            
-    
-            
-          </span>
-    
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习/" itemprop="url" rel="index">
-                    <span itemprop="name">学习</span>
-                  </a>
-                </span>
-    
-                
-                
-              
-            </span>
-          
-    
-          
-            
-          
-    
-          
-          
-    
-          
-    
-          
-    
-          
-    
-        </div>
-      </header>
-    
-    
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-    
-      
-      
-    
-      
-        
-          
-            <h2 id="hexo-博客"><a href="#hexo-博客" class="headerlink" title="hexo 博客"></a>hexo 博客</h2><p>1、 多台电脑操作hexo个人网站<br><br><a href="https://blog.csdn.net/Zhangxiaorui_9/article/details/79723288" target="_blank" rel="noopener">https://blog.csdn.net/Zhangxiaorui_9/article/details/79723288</a></p>
-<p>2、如何生成SSH key<br><br><a href="https://blog.csdn.net/u014702999/article/details/52779319" target="_blank" rel="noopener">https://blog.csdn.net/u014702999/article/details/52779319</a></p>
-<p>3、hexo的next主题个性化配置教程<br><br><a href="https://segmentfault.com/a/1190000009544924" target="_blank" rel="noopener">https://segmentfault.com/a/1190000009544924</a></p>
-<h2 id="git基本使用"><a href="#git基本使用" class="headerlink" title="git基本使用"></a>git基本使用</h2><p><a href="https://blog.csdn.net/qq_32531823/article/details/53259822" target="_blank" rel="noopener">https://blog.csdn.net/qq_32531823/article/details/53259822</a><br><br><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013758392816224cafd33c44b4451887cc941e6716805c000" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013758392816224cafd33c44b4451887cc941e6716805c000</a></p>
-<h2 id="git遇到的问题"><a href="#git遇到的问题" class="headerlink" title="git遇到的问题"></a>git遇到的问题</h2><h5 id="1、-git-commit-没写-m-说明进入vim模式的处理"><a href="#1、-git-commit-没写-m-说明进入vim模式的处理" class="headerlink" title="1、 git commit 没写-m  说明进入vim模式的处理"></a>1、 git commit 没写-m  说明进入vim模式的处理</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入i，进入insert输入模式，输入说明</span><br><span class="line">输入完后，按ESC，下方insert消失</span><br><span class="line">输入：，再输wq，回车。</span><br></pre></td></tr></table></figure>
-<h5 id="2-、提交代码-发现空目录"><a href="#2-、提交代码-发现空目录" class="headerlink" title="2.、提交代码 发现空目录"></a>2.、提交代码 发现空目录</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">提交代码到服务器后发现git clone下来的有些目录是空的。</span><br><span class="line">查看服务器的目录果然是空的。看本季git add .    后查看git  status </span><br><span class="line"></span><br><span class="line">modified: xxx(modified content, untracked content)</span><br><span class="line">大概意思是xxx目录没有被跟踪。那自然push上去的时候是空的了</span><br><span class="line">解决办法：后来发现这主要是xxx目录下有一个.git 目录(隐藏文件，按shift+common+.可显示)，</span><br><span class="line">可能是被人给你这个目录的时候里面有了.git目录。删除.git目录。重新git add .就可</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div>
-  
-	</div>
-    
-    <footer class="post-footer">
-      
-    
-      
-    
-      
-    
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/01/开发中遇到的问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1287,6 +1136,157 @@
 <h4 id="5-用代码使程序转向设置页面："><a href="#5-用代码使程序转向设置页面：" class="headerlink" title="5.用代码使程序转向设置页面："></a>5.用代码使程序转向设置页面：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">NSURL *url=[NSURL URLWithString:@&quot;prefs:root=WIFI&quot;];//转向-&gt;&quot;设置wifi&quot;页面</span><br><span class="line">[[UIApplication sharedApplication] openURL:url];</span><br></pre></td></tr></table></figure>
 <h4 id="6-系统判断"><a href="#6-系统判断" class="headerlink" title="6.系统判断"></a>6.系统判断</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#define isOperatingSystemAtLeastVersion(majorVersion, minorVersion, patchVersion)[[NSProcessInfo processInfo] isOperatingSystemAtLeastVersion: (NSOperatingSystemVersion) &#123;</span><br><span class="line">    majorVersion,</span><br><span class="line">    minorVersion,</span><br><span class="line">    patchVersion</span><br><span class="line">&#125;]</span><br><span class="line"></span><br><span class="line">if (isOperatingSystemAtLeastVersion(11, 0, 0)) &#123;</span><br><span class="line">    //using new API</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    //using deprecated API</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="7-web-Cookies-每次退出应用都被清除解决方法-用于实现自动登录-https-www-jianshu-com-p-19a053e37c53"><a href="#7-web-Cookies-每次退出应用都被清除解决方法-用于实现自动登录-https-www-jianshu-com-p-19a053e37c53" class="headerlink" title="7. web Cookies 每次退出应用都被清除解决方法( 用于实现自动登录 )https://www.jianshu.com/p/19a053e37c53"></a>7. web Cookies 每次退出应用都被清除解决方法( 用于实现自动登录 )<a href="https://www.jianshu.com/p/19a053e37c53" target="_blank" rel="noopener">https://www.jianshu.com/p/19a053e37c53</a></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">NSHTTPCookieStorage* cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];</span><br><span class="line">    NSArray&lt;NSHTTPCookie *&gt; *cookies = [cookieStorage cookiesForURL:[NSURL URLWithString:baseUrl]];</span><br><span class="line">    NSMutableArray&lt;NSDictionary *&gt; *propertiesList = [[NSMutableArray alloc] init];</span><br><span class="line">    [cookies enumerateObjectsUsingBlock:^(NSHTTPCookie * _Nonnull cookie, NSUInteger idx, BOOL * _Nonnull stop) &#123;</span><br><span class="line">        NSMutableDictionary *properties = [[cookie properties] mutableCopy];</span><br><span class="line">        //将cookie过期时间设置为一年后</span><br><span class="line">        NSDate *expiresDate = [NSDate dateWithTimeIntervalSinceNow:3600*24*30*12];</span><br><span class="line">        properties[NSHTTPCookieExpires] = expiresDate;</span><br><span class="line">        //下面一行是关键,删除Cookies的discard字段，应用退出，会话结束的时候继续保留Cookies</span><br><span class="line">        [properties removeObjectForKey:NSHTTPCookieDiscard];</span><br><span class="line">         //重新设置改动后的Cookies</span><br><span class="line">        [cookieStorage setCookie:[NSHTTPCookie cookieWithProperties:properties]];</span><br><span class="line">    &#125;];</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div>
+  
+	</div>
+    
+    <footer class="post-footer">
+      
+    
+      
+    
+      
+    
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/01/关于git使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CooFree">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/13346791?s=400&u=2561ab3456ba0c9e16e3f99ec5a98a6580d5c9eb&v=4">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BlueSky">
+    </span>
+    
+    
+      <header class="post-header">
+    
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/01/关于git使用/" itemprop="url">git的基本操作以及hexo主题个性化设置</a></h1>
+        
+    
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-01T15:49:11+08:00">
+                2018-06-01
+              </time>
+            
+    
+            
+    
+            
+          </span>
+    
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+    
+                
+                
+              
+            </span>
+          
+    
+          
+            
+          
+    
+          
+          
+    
+          
+    
+          
+    
+          
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+      
+    
+      
+        
+          
+            <h2 id="hexo-博客"><a href="#hexo-博客" class="headerlink" title="hexo 博客"></a>hexo 博客</h2><p>1、 多台电脑操作hexo个人网站<br><br><a href="https://blog.csdn.net/Zhangxiaorui_9/article/details/79723288" target="_blank" rel="noopener">https://blog.csdn.net/Zhangxiaorui_9/article/details/79723288</a></p>
+<p>2、如何生成SSH key<br><br><a href="https://blog.csdn.net/u014702999/article/details/52779319" target="_blank" rel="noopener">https://blog.csdn.net/u014702999/article/details/52779319</a></p>
+<p>3、hexo的next主题个性化配置教程<br><br><a href="https://segmentfault.com/a/1190000009544924" target="_blank" rel="noopener">https://segmentfault.com/a/1190000009544924</a></p>
+<h2 id="git基本使用"><a href="#git基本使用" class="headerlink" title="git基本使用"></a>git基本使用</h2><p><a href="https://blog.csdn.net/qq_32531823/article/details/53259822" target="_blank" rel="noopener">https://blog.csdn.net/qq_32531823/article/details/53259822</a><br><br><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013758392816224cafd33c44b4451887cc941e6716805c000" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013758392816224cafd33c44b4451887cc941e6716805c000</a></p>
+<h2 id="git遇到的问题"><a href="#git遇到的问题" class="headerlink" title="git遇到的问题"></a>git遇到的问题</h2><h5 id="1、-git-commit-没写-m-说明进入vim模式的处理"><a href="#1、-git-commit-没写-m-说明进入vim模式的处理" class="headerlink" title="1、 git commit 没写-m  说明进入vim模式的处理"></a>1、 git commit 没写-m  说明进入vim模式的处理</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入i，进入insert输入模式，输入说明</span><br><span class="line">输入完后，按ESC，下方insert消失</span><br><span class="line">输入：，再输wq，回车。</span><br></pre></td></tr></table></figure>
+<h5 id="2-、提交代码-发现空目录"><a href="#2-、提交代码-发现空目录" class="headerlink" title="2.、提交代码 发现空目录"></a>2.、提交代码 发现空目录</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">提交代码到服务器后发现git clone下来的有些目录是空的。</span><br><span class="line">查看服务器的目录果然是空的。看本季git add .    后查看git  status </span><br><span class="line"></span><br><span class="line">modified: xxx(modified content, untracked content)</span><br><span class="line">大概意思是xxx目录没有被跟踪。那自然push上去的时候是空的了</span><br><span class="line">解决办法：后来发现这主要是xxx目录下有一个.git 目录(隐藏文件，按shift+common+.可显示)，</span><br><span class="line">可能是被人给你这个目录的时候里面有了.git目录。删除.git目录。重新git add .就可</span><br></pre></td></tr></table></figure>
 
           
         

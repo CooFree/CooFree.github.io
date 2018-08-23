@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="BlueSky">
 <meta property="og:description" content="React-Native入门指南 https://github.com/vczero/react-native-lesson  React-Native各类学习资源 https://github.com/reactnativecn/react-native-guide  iOS打包到真机 https://blog.csdn.net/ailongyang/article/details/548664">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-13T06:46:11.000Z">
+<meta property="og:updated_time" content="2018-08-23T07:46:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ReacNative学习">
 <meta name="twitter:description" content="React-Native入门指南 https://github.com/vczero/react-native-lesson  React-Native各类学习资源 https://github.com/reactnativecn/react-native-guide  iOS打包到真机 https://blog.csdn.net/ailongyang/article/details/548664">
@@ -332,7 +332,7 @@
 <p><a href="https://github.com/reactnativecn/react-native-guide" target="_blank" rel="noopener">https://github.com/reactnativecn/react-native-guide</a></p>
 </blockquote>
 <h4 id="iOS打包到真机"><a href="#iOS打包到真机" class="headerlink" title="iOS打包到真机"></a>iOS打包到真机</h4><blockquote>
-<p><a href="https://blog.csdn.net/ailongyang/article/details/54866469" target="_blank" rel="noopener">https://blog.csdn.net/ailongyang/article/details/54866469</a></p>
+<p><a href="https://blog.csdn.net/ailongyang/article/details/54866469" target="_blank" rel="noopener">https://blog.csdn.net/ailongyang/article/details/54866469</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">1.进入rn项目的ios工程文件夹，找到和rn项目同名的文件件，打开AppDelegate.m文件，将这一行注释掉(为了方便真机和模拟器间的切换，尽量注释)：</span><br><span class="line"></span><br><span class="line">jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@&quot;index.ios&quot; fallbackResource:nil];</span><br><span class="line">新加一行：</span><br><span class="line"></span><br><span class="line">jsCodeLocation = [[NSBundle mainBundle] URLForResource:@&quot;index.ios&quot; withExtension:@&quot;jsbundle&quot;];</span><br><span class="line">如果需要切换回模拟器调试，只需要将新加这行注释掉，并恢复原代码即可。</span><br><span class="line"></span><br><span class="line">新加这行代码大概意思就是告诉native rn代码的入口，我们会在下一步生成这个jsbundle。</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">2.打开终端，进入你的rn工程，在根目录下执行bundle命令：</span><br><span class="line"></span><br><span class="line">react-native bundle --entry-file ./index.ios.js --bundle-output ./ios/bundle/index.ios.jsbundle --platform ios --assets-dest ./ios/bundle --dev false</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><blockquote>
 <p><a href="https://www.jianshu.com/p/98c8f2a970eb" target="_blank" rel="noopener">https://www.jianshu.com/p/98c8f2a970eb</a></p>
@@ -374,8 +374,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/01/markdown工具typora常用流程图/" rel="next" title="markdown工具typora常用流程图">
-                <i class="fa fa-chevron-left"></i> markdown工具typora常用流程图
+              <a href="/2018/06/01/2018-06-01-看一遍就会的CocoaPods的安装和使用教程/" rel="next" title="看一遍就会的CocoaPods的安装和使用教程">
+                <i class="fa fa-chevron-left"></i> 看一遍就会的CocoaPods的安装和使用教程
               </a>
             
           </div>
@@ -384,8 +384,8 @@
     
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/06/01/2018-06-01-看一遍就会的CocoaPods的安装和使用教程/" rel="prev" title="看一遍就会的CocoaPods的安装和使用教程">
-                看一遍就会的CocoaPods的安装和使用教程 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/08/01/2018-08-01-Masonry学习/" rel="prev" title="Masonry学习">
+                Masonry学习 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
